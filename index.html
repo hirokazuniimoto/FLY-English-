@@ -439,6 +439,9 @@ ol{position: absolute;
             speechSynthesis.speak( synthes2 );
 
           }
+
+          setTimeout("location.reload()",10000);
+
         }
         resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
       }
