@@ -232,7 +232,7 @@ ol{position: absolute;
 
       recognition.lang = 'en-En';
       recognition.interimResults = true;
-      //recognition.continuous = true;
+      recognition.continuous = true;
 
       let finalTranscript = ''; // 確定した(黒の)認識結果
 
@@ -273,6 +273,9 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
+            location.reload()
+
+
           }
 
           else if ( finalTranscript.match(/YouTube/)){
@@ -301,6 +304,9 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
+            location.reload()
+
+
           }
 
           else if ( finalTranscript.match(/Google/)){
@@ -328,6 +334,9 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
+            location.reload()
+
+
           }
 
           else if ( finalTranscript.match(/Amazon music/)){
@@ -354,6 +363,9 @@ ol{position: absolute;
 
             //音声出力
             speechSynthesis.speak( synthes2 );
+
+            location.reload()
+
 
           }
 
@@ -383,6 +395,9 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
+            location.reload()
+
+
           }
 
           else if ( finalTranscript.match(/homepage/)){
@@ -409,6 +424,9 @@ ol{position: absolute;
 
             //音声出力
             speechSynthesis.speak( synthes2 );
+
+            location.reload()
+
 
           }
 
@@ -438,9 +456,12 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
+            location.reload()
+
+
           }
 
-          setTimeout("location.reload()",10000);
+
 
         }
         resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
