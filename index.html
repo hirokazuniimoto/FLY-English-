@@ -6,13 +6,17 @@
     <title>FLY</title>
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <!-- StyleSheet -->
     <link rel="stylesheet" media="(min-width: 640px)" href="{{url_for('static',filename='style_pc.css')}}">
     <link rel="stylesheet" media="(max-width: 640px)" href="{{url_for('static',filename='style_mobile.css')}}">
 
+
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
 
 <!--<style>
 ol{position: absolute;
@@ -34,6 +38,7 @@ ol{position: absolute;
     background-size:100% auto;/*この場合は高さが自動設定*/
     background-size:auto 100%;/*この場合は幅が自動設定*/
 /*    background-size: cover;*/
+    background-color: black;
     }
     h1 {text-shadow:6px 6px 2px black;
         text-align:right;
@@ -41,7 +46,7 @@ ol{position: absolute;
     p{color: black;}
 /*    p {text-shadow:5px 5px 3px black;} */
     .link {/*text-shadow: 4px 4px 10px black; */
-      position: fixed;
+      position: absolute;
       bottom: 20px; right: 20px;
        color:white;
       font-size: 30px;}
@@ -49,7 +54,7 @@ ol{position: absolute;
       position: absolute;
        color:white;} 　
     .link4 {/*text-shadow: 4px 4px 10px black;*/
-
+      font-size: 30px;
        color:white;}
     .link3 {color:black;}
 
@@ -61,9 +66,38 @@ ol{position: absolute;
          }
     .mozi{color:white;
           }
+    .mozi2{color:white;
+          position: absolute;
+          bottom: 0px;
+                }
+    .botan2{
+            color:white;
+                        /*transform: translate(-50%, -50%);*/
+                        /*opacity:0.3;*/
+               background-color: rgba( 100, 100, 220, 0.55 );
+                        }
+    .name{color:white;
+        font-size:25px;
+                      }
+      .requestlist{
+          color:white;
+      font-size:25px;
+      color:black;
+                }
+      .newrequest{
+        color:red;
+        font-size:25px;
 
-
-
+                }
+    .title{
+        text-align:center;
+    font-size: 30px;
+          color: white;
+                }
+      .youso{
+        background-color: rgba(204, 255, 204, 0.55 );
+        color: white;
+            }
 
 
 
@@ -88,13 +122,14 @@ ol{position: absolute;
   background-size:100% auto;/*この場合は高さが自動設定*/
  background-size:auto 100%;/*この場合は幅が自動設定*/
  background-size: cover;
+ background-color: black;
   }
   h1{text-align:center;
     text-shadow:8px 8px 5px black;}
   p{color:white;
     text-shadow:8px 8px 5px black;}
     .link {/*text-shadow: 4px 4px 10px black; */
-      position: fixed;
+
       bottom: 20px; right: 20px;
        color:white;
       font-size: 20px;}
@@ -107,9 +142,9 @@ ol{position: absolute;
        color:white;}
     .link3 {color:black;}
 
-    .botan{height:150px;
-
-          position: fixed;
+    .botan{
+          position: absolute;
+          height:150px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -119,10 +154,43 @@ ol{position: absolute;
 
          }
     .mozi{color:white;
-            font-size: 20px;
-            position: fixed;
-            bottom: 55px;;
-            }
+          font-size: 20px;
+
+          bottom: 55px;;
+          }
+
+          .mozi2{color:white;
+                position: absolute;
+                bottom: 0px;
+                      }
+          .botan2{
+                  color:white;
+                              /*transform: translate(-50%, -50%);*/
+                              /*opacity:0.3;*/
+                     background-color: rgba( 100, 100, 220, 0.55 );
+                              }
+          .name{color:white;
+              font-size:25px;
+                            }
+            .requestlist{
+                color:white;
+            font-size:25px;
+            color:black;
+                      }
+            .newrequest{
+              color:red;
+              font-size:25px;
+
+                      }
+          .title{
+              text-align:center;
+          font-size: 30px;
+                color: white;
+                      }
+            .youso{
+              background-color: rgba(204, 255, 204, 0.55 );
+              color: white;
+                  }
 
 
 
@@ -167,7 +235,7 @@ ol{position: absolute;
 <!-- <h1>name</h1> -->
 <div class="row ">
 <p class="col-lg-3  col-1 pt-5"></p>
-<button class="col-lg-6   col-10 text-center botan btn btn-primary   mt-5 w-50" id="start-btn">Talk to me</button>
+<button class="col-lg-6  col-10 text-center botan btn btn-primary   mt-5 w-50"  id="start-btn">Talk to me</button>
 <!--<div id="result-div"></div>-->
 <p class="col-lg-3 col-1 "></p>
 </div>
@@ -176,12 +244,56 @@ ol{position: absolute;
 <p class="col-lg-3 pt-5"></p>
 <div id="result-div" class="mozi col-lg-6 display-4  text-center pb-5 mt-5"></div>
 <p class="col-lg-3 pt-5"></p>
+</div>
+
+<p class="pt-5"></p>
+
+<div class="row pt-5 mt-5">
+<p class="col-lg-3 "></p>
+<p class="mozi col-lg-6 display-4  text-center">Add request</p>
+<p class="col-lg-3 "></p>
+</div>
+
+
+<div class="form-group row pt-4">
+<label class="col-3 name" for="name"><span>Request</span></label>
+<input name="mydata_in1" id="mydata_in1" type="text" class="form-control col-6 area" placeholder="Write your request " type="text" value="" />
+<p class="col-3"></p>
+</div>
+
+<div class="form-group row">
+<label class="col-3 name" for="name"><span>URL</span></label>
+<input name="mydata_in2" class="form-control col-6 area" id="mydata_in2" placeholder="Write URL " type="text" value="" />
+<p class="col-3"></p>
+</div>
+
+<div class="row ">
+<p class="col-2 pt-1"></p>
+<input type="button" class="col-2 text-center botan2 btn btn-primary   mt-3 w-25" value="save" onclick="save();"/>
+<p class="col-1 pt-"></p>
+<input type="button"  class="col-2 text-center botan2 btn btn-primary   mt-3 w-25" value="delete" onclick="remove();"/>
+<p class="col-1 pt-"></p>
+<input type="button" class="col-2 text-center botan2 btn btn-primary   mt-3 w-25" value="reset" onclick="reset();"/>
+<p class="col-2"></p>
+</div>
+
+<div class="card  mt-5 youso">
+<div class="card-header">
+<h1 class="card-title title"><span>List of requests</span></h1>
+</div>
+<div class="card-body">
+<div id="mydata_out2" class="pt- newrequest"></div>
+<div id="mydata_out" class="pt-2 requestlist"></div>
+</div>
+</div>
+
+<p class="pt-5"></p>
 
 <!--<p class="display-4 text-dark text-center pb-5 mt-5">welcome you sir, always a pleasure seeing you </p>-->
 
-<a href="https://hirokazuniimoto.github.io/FLY-japanese-/" class=" mt-4  link text-light text-center" rel="nofollow">日本語版</a>
 
-<!-- javascript-->
+<a href="https://hirokazuniimoto.github.io/FLY-English-/" class="pt-5 mt-5 link float-right" rel="nofollow">English ver</a>
+
 <script>
 
 //音声出力
@@ -339,96 +451,6 @@ ol{position: absolute;
 
           }
 
-          else if ( finalTranscript.match(/Amazon music/)){
-            const url = 'https://music.amazon.co.jp/playlists';
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            synthes2.text = "OK! ";
-            synthes2.lang = 'en-US';          // 出力する音声の言語
-            //synthes2.text = "了解です！";     // 出力する文章
-            //synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload()
-
-
-          }
-
-
-          else if ( finalTranscript.match(/music/)){
-            const url = 'https://music.youtube.com/watch?v=vH0CYXqvZHc&list=RDMMsSeXLlqNXeU';
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            synthes2.text = "OK! ";
-            synthes2.lang = 'en-US';          // 出力する音声の言語
-            //synthes2.text = "了解です！";     // 出力する文章
-            //synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload()
-
-
-          }
-
-          else if ( finalTranscript.match(/homepage/)){
-            const url = 'https://hirokazuniimoto.github.io/portfolio/';
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            synthes2.text = "OK! ";
-            synthes2.lang = 'en-US';          // 出力する音声の言語
-            //synthes2.text = "了解です！";     // 出力する文章
-            //synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload()
-
-
-          }
 
           else if ( finalTranscript.match(/translation/)){
             const url = 'https://www.google.com/search?sxsrf=ALeKk029K5JKuBaTfxrEr7Q9FeKo-Jiwlw%3A1594909252729&ei=RGIQX-aILOitmAW-j4GwDQ&q=%E7%BF%BB%E8%A8%B3&oq=%E7%BF%BB%E8%A8%B3&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIECCMQJzIECCMQJzIMCAAQsQMQsQMQBBAlMgYIABAEECUyDAgAELEDELEDEAQQJTIGCAAQBBAlMgYIABAEECU6BggAEAcQHjoICAAQCBAKEB46BggAEAgQHlDLwc_PAljLwc_PAmCCw8_PAmgBcAB4AIABggKIAYEEkgEFMC4yLjGYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjmutT7-9HqAhXoFqYKHb5HANYQ4dUDCAw&uact=5';
@@ -461,8 +483,35 @@ ol{position: absolute;
 
           }
 
+          for(var i2 = 0; i2 < localStorage.length; i2++){
+            k=localStorage.key(i2)
+            if (finalTranscript.match(k)){
+              window.open(localStorage.getItem(k), '_blank');
 
+              //音声出力APIのインスタンス生成
+              var synthes2 = new SpeechSynthesisUtterance();
 
+              //音声出力APIにパラメータを設定
+              synthes2.voiceURI = 2;            // 出力する音声の種類
+              synthes2.volume = 2;              // 出力する音声のボリューム
+              synthes2.rate = 1.4;                // 出力する音声の速さ
+              synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+              //synthes.text = "for you sir always";     // 出力する文章
+              //synthes.text = "always a pleasure seeing you ,sir";
+              //synthes2.text = "OK! ";
+              //synthes2.lang = 'en-US';          // 出力する音声の言語
+              synthes2.text = "了解です！";     // 出力する文章
+              synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+              //synthes.text = "";     // 出力する文章
+              //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+              //音声出力
+              speechSynthesis.speak( synthes2 );
+              break;
+            }
+
+          }
         }
         resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
       }
@@ -476,6 +525,8 @@ ol{position: absolute;
 
 </script>
 
+
+<!-- 背景のアニメーション-->
 <script>
 var w = c.width = window.innerWidth,
         h = c.height = window.innerHeight,
@@ -524,7 +575,54 @@ window.addEventListener( 'resize', function(){
 
 </script>
 
+<script language="javascript" type="text/javascript">
 
+    // 保存
+    function save() {
+      var mydata1 = document.getElementById("mydata_in1").value;
+      var mydata2 = document.getElementById("mydata_in2").value;
+      console.log(`mydata_in2 = ${mydata_in2}`);
+      if (!mydata1){
+        alert('Requestを入力してください。');
+      }
+      else{
+        localStorage.setItem(mydata1, mydata2);
+        //k=localStorage.key(0)
+        document.getElementById('mydata_out2').innerHTML +="New!  Request「"+ mydata1+" 」　URL："+mydata2 + '<br>';
+      }
+
+    }
+
+    //消去
+    function remove() {
+      var mydata1 = document.getElementById("mydata_in1").value;
+      var mydata2 = document.getElementById("mydata_in2").value;
+      console.log(`mydata_in2 = ${mydata_in2}`);
+      localStorage.removeItem(mydata1)
+      alert("「"+mydata1+'」Requestを消去しました。');
+    }
+
+    //初期化
+    function reset() {
+      localStorage.clear()
+      alert('すべての項目を初期化しました。');
+    }
+
+
+    window.onload = () => {
+      var g=0
+      for(var i = 0; i < localStorage.length; i++){
+        console.log(localStorage.key(i));
+        k=localStorage.key(i)
+        if (k=="地域"){
+          continue;
+        }
+        g+=1
+        document.getElementById('mydata_out').innerHTML +=g+". Request「"+ localStorage.key(i) +" 」　URL："+localStorage.getItem(k) + '<br>';
+      }
+
+    }
+  </script>
 
 </body>
 </html>
